@@ -1,0 +1,9 @@
+<h1><%= @player.name %></h1>
+<h3><%= @player.position %></h3>
+
+<form action= '/players/<%= @player.id %>/delete' method= "POST">
+  <input name="_method" type="hidden" value="delete">
+  <input type= "submit" value= "Drop Player">
+</form>
+
+<a href="/players/<%= @player.id %>/edit">Edit Player</a>

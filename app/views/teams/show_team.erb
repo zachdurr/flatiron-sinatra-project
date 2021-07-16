@@ -1,0 +1,15 @@
+Your Team: <br>
+<h2><%= @team.team_name %></h2>
+<br>
+<h3>Roster:</h3>
+<% @team.players.each do |player| %>
+<h4><a href="/players/<%= player.id %>"><%= player.name %> / <%= player.position %></a></h4>
+<% end %>
+<a href= "/players/new"> Add Players to Your Team </a>
+
+<br></br>
+
+<form action= '/teams/<%= @team.id %>/delete' method= "POST">
+  <input name="_method" type="hidden" value="delete">
+  <input type= "submit" value= "Delete Team">
+</form>

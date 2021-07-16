@@ -12,7 +12,6 @@ class ApplicationController < Sinatra::Base
 
   get '/' do 
     erb :index
-    #welcome to fwitter!!! 
   end
 
   helpers do
@@ -28,6 +27,10 @@ class ApplicationController < Sinatra::Base
 
     def current_user
       User.find(session[:user_id])
+    end
+
+    def current_team
+      Team.find(session[:team_id])
     end
 
   end

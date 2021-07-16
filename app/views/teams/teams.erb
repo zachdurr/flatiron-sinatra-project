@@ -1,14 +1,11 @@
 <% @teams.each do |team| %>
-   <h2> <%= team.name %> </h2>
+   <h2> <%= team.team_name%> </h2> 
     <ul>
         <% team.players.each do |player| %>
-        <li> <%= player.name %> </li>
+        <li><%= player.name %> </li>
         <% end %>
     </ul>
 <% end %>
 
-
-<form action="/logout" method="post">
-  Logout?
-  <input type="submit" name="logout" >
-</form>
+<a href="/teams/new">Create a New Team</a>
+<a href="/logout">Log Out</a>
